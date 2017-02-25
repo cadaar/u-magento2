@@ -1,13 +1,17 @@
 Install
 ---
+composer install
+
 Edit your hosts file
-127.0.0.1 local.u-magento2.com
+```127.0.0.1 local.u-magento2.com```
 
 Import database
 
 
-Copy and update app/etc/_env.php app/etc/env.php
-Copy and update app/etc/_config.php app/etc/config.php
+Copy app/etc/env.php.sample app/etc/env.php
+Update your database settings
+
+Copy app/etc/config.php.sample app/etc/config.php
 
 
 Magento Admin Info
