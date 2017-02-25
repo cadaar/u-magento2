@@ -5,7 +5,7 @@ composer install
 Edit your hosts file
 ```127.0.0.1 local.u-magento2.com```
 
-Import database
+Create database `u_magento2_2_1_5` and import 2_1_5.sql into
 
 
 Copy app/etc/env.php.sample app/etc/env.php
