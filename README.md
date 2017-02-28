@@ -6,7 +6,8 @@
 `127.0.0.1 local.u-magento2.com`
 
 1. Edit your apache vhosts file
-```<VirtualHost [your namevirtualhost]>
+```
+<VirtualHost [your namevirtualhost]>
    ServerName local.u-magento2.com
    ServerAdmin webmaster@localhost
    SetEnv MAGE_MODE developer
