@@ -7,7 +7,7 @@
 
 1. Edit your apace vhosts file
 `<VirtualHost [Your NameVirtualHost]>
-        ServerName local.u-magento2.com
+        ServerName local.u-magento2.com
         ServerAdmin webmaster@localhost
         SetEnv MAGE_MODE developer
         php_value error_reporting 1
@@ -19,8 +19,7 @@
                 Order allow,deny
                 allow from all
         </Directory>
-</VirtualHost>`
-
+</VirtualHost>```
 1. Create database
 `CREATE DATABASE u_magento2_2_1_5 CHARACTER SET utf8 COLLATE utf8_general_ci;` 
 
