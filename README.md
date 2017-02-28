@@ -14,7 +14,7 @@
         php_flag display_errors on
         DocumentRoot [path-to-u-magento2-folder]
         <Directory [path-to-u-magento2-folder]>
-                Options FollowSymLinks
+                Options FollowSymLinks
                 AllowOverride All
                 Order allow,deny
                 allow from all
