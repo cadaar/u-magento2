@@ -6,21 +6,21 @@
 `127.0.0.1 local.u-magento2.com`
 
 1. Edit your apache vhosts file
-```<virtualhost [your namevirtualhost]>
-            servername local.u-magento2.com
-            serveradmin webmaster@localhost
-            setenv mage_mode developer
-            php_value error_reporting 1
-            php_flag display_errors on
-            documentroot [path-to-u-magento2-folder]
-            <directory [path-to-u-magento2-folder]>
-                    options followsymlinks
-                    allowoverride all
-                    order allow,deny
-                    allow from all
-            </directory>
-    </virtualhost>
-    ```
+```<VirtualHost [your namevirtualhost]>
+   ServerName local.u-magento2.com
+   ServerAdmin webmaster@localhost
+   SetEnv MAGE_MODE developer
+   php_value error_reporting 1
+   php_flag display_errors on
+   DocumentRoot [path-to-u-magento2-folder]
+   <Directory [path-to-u-magento2-folder]>
+      Options FollowSymLinks
+      AllowOverride All
+      Order allow,deny
+      allow from all
+   </Directory>
+</VirtualHost>  
+```
 
 1. Create database
 `CREATE DATABASE u_magento2_2_1_5 CHARACTER SET utf8 COLLATE utf8_general_ci;` 
