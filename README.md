@@ -18,7 +18,6 @@ Update your database settings
 - Email: admin@example.com
 - Password: magento123
 
-
 - Store URL: http://local.u-magento2.com/2_1_5/
 - Store Admin URL: http://local.u-magento2.com/2_1_5/admin/
 
