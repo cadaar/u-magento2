@@ -19,8 +19,8 @@
                     order allow,deny
                     allow from all
             </directory>
-    </virtualhost> 
-```
+    </virtualhost>
+    ```
 
 1. Create database
 `CREATE DATABASE u_magento2_2_1_5 CHARACTER SET utf8 COLLATE utf8_general_ci;` 
