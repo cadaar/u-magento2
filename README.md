@@ -44,5 +44,5 @@ Update your database settings
 - Store Admin URL: http://local.u-magento2.com/2_1_5/admin/
 
 ### How To
-- [Magento2 - Override Front End Block](https://github.com/talosdigital/u-magento2/commit/f8c92df07852ea96468e58e97e84b9e98b73aaa6)
-
+- [Magento2 - Override Front End Block](https://github.com/talosdigital/u-magento2/tree/howto/override-block) [Code](https://github.com/talosdigital/u-magento2/commit/f8c92df07852ea96468e58e97e84b9e98b73aaa6)
+- [Magento2 - Override KnockoutJs Templates](https://github.com/talosdigital/u-magento2/tree/howto/override-knockoutjs-template) [Code] (https://github.com/talosdigital/u-magento2/commit/3b2660a4c15c0589f24cab16f487a3802cbde4ea)
