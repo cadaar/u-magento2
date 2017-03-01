@@ -43,3 +43,6 @@ Update your database settings
 - Store URL: http://local.u-magento2.com/2_1_5/
 - Store Admin URL: http://local.u-magento2.com/2_1_5/admin/
 
+### How To
+- [Magento2 - Override Front End Block](https://github.com/talosdigital/u-magento2/commit/f8c92df07852ea96468e58e97e84b9e98b73aaa6)
+
