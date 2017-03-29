@@ -1,48 +1,28 @@
-### Install
+## How to create models and its integration tests on magento 2
 
-1. `composer install`
+If you have doubts about how to install this module, go to this [README](https://github.com/talosdigital/u-magento2/blob/master/README.md)
 
-1. Edit your hosts file
-`127.0.0.1 local.u-magento2.com`
+### INTEGRATION TESTS ON MAGENTO 2:
+- Create integration tests database. e.g.: CREATE DATABASE magentou_integration_tests;
 
-1. Edit your apache vhosts file
-```
-<VirtualHost [your namevirtualhost]>
-   ServerName local.u-magento2.com
-   ServerAdmin webmaster@localhost
-   SetEnv MAGE_MODE developer
-   php_value error_reporting 1
-   php_flag display_errors on
-   DocumentRoot [path-to-u-magento2-folder]
-   <Directory [path-to-u-magento2-folder]>
-      Options FollowSymLinks
-      AllowOverride All
-      Order allow,deny
-      allow from all
-   </Directory>
-</VirtualHost>  
-```
+- Go to dev/tests/integration/etc/ and copy the file "install-config-mysql.php.dist" as "install-config-mysql.php.". Change the values of the db conection according to you db configuration.
 
-1. Create database
-`CREATE DATABASE u_magento2_2_1_5 CHARACTER SET utf8 COLLATE utf8_general_ci;` 
+- Go to dev/tests/integration and copy the file "phpunit.xml.dist" as "phpunit.xml". Change your testsuite block with the following  
+    ``` 
+    <!-- Test suites definition -->
+    <testsuites>
+        <!-- Memory tests run first to prevent influence of other tests on accuracy of memory measurements -->
+        <testsuite name="Magento Integration Tests">
+            <directory>../../../app/code/*/*/Test/Integration</directory>
+        </testsuite>
+    </testsuites>
+    ``` 
+    In order to optimize the running time of the tests, change the value of the constant ```TESTS_CLEANUP``` to ```disabled```
 
-1. Import database
-`mysql -u youruser -p u_magento2_2_1_5 < import 2_1_5.sql`
+- Run the following commands:
+    ```
+    MAGENTO_HOME=$(pwd)
+    rm -rf dev/tests/integration/tmp/sandbox*
+    ./vendor/phpunit/phpunit/phpunit --configuration $MAGENTO_HOME/dev/tests/integration/phpunit.xml
+    ```
 
-1. Copy `app/etc/env.php.sample` to `app/etc/env.php`
-Update your database settings
-
-1. Copy `app/etc/config.php.sample` to `app/etc/config.php`
-
-
-### Magento Admin Info
-- Username: admin
-- Email: admin@example.com
-- Password: magento123
-
-- Store URL: http://local.u-magento2.com/2_1_5/
-- Store Admin URL: http://local.u-magento2.com/2_1_5/admin/
-
-### How To
-- Branch: [Magento2 - Override Front End Block](https://github.com/talosdigital/u-magento2/tree/howto/override-block) Code: [here](https://github.com/talosdigital/u-magento2/commit/f8c92df07852ea96468e58e97e84b9e98b73aaa6)
-- Branch: [Magento2 - Override KnockoutJs Templates](https://github.com/talosdigital/u-magento2/tree/howto/override-knockoutjs-template) Code: [here] (https://github.com/talosdigital/u-magento2/commit/3b2660a4c15c0589f24cab16f487a3802cbde4ea)
